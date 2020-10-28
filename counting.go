@@ -86,4 +86,18 @@
 {{ else }}
     {{/* Increment streak by 1 for each correct answer */}}
     {{ $streak = dbIncr 0 "streak" 1 }}
+    {{ $absInput := (reReplace "-" ($input | toString) "") }}
+
+    {{/* Check for magic numbers */}}
+
+    {{/* hehe */}}
+    {{ if eq $absInput "69" }}
+        {{ addReactions  ":heheBoye:754459019300700281" ":ab_nice:754459018948247554" }}
+    {{end}}
+
+    {{/* i love you */}}
+    {{ if eq $absInput "143" }}
+        {{ addReactions  ":pepeKilig:764897548288655420" "❤️" }}
+    {{end}}
+    
 {{ end }}
