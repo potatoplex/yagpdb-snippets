@@ -11,7 +11,7 @@
 */}}
 
 {{/* Change into correct easter egg CCID */}}
-{{ $easterEggCC := 2 }}
+{{ $easterEggCC := 5 }}
 
 {{/* Get value from DB */}}
 {{ $tofuNum := (dbGet 0 "tofuNum").Value}}
@@ -98,7 +98,7 @@
         {{ $streak = dbIncr 0 "streak" 1 }}
 
         {{/* Check for magic numbers */}}
-        {{ execCC $easterEggCC nil 0 (sdict "Input" $input) }}
+        {{ execCC $easterEggCC nil 0 (sdict "Input" (toString $input)) }}
         
     {{ end }}
 {{ end }}
