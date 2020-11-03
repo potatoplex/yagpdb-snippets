@@ -13,6 +13,44 @@
 
 {{/* Check for magic numbers */}}
 
+{{/* 21 Guns */}}
+{{ if eq $absInput "21" }}
+		{{ $url := "https://cdn.discordapp.com/attachments/765047137473265714/773234394122027058/21guns.gif" }}
+		{{ sendMessage nil (cembed
+				"title" "One... Twety One Guns..."
+				"color" (0x228B22)
+				"image" (sdict "url" $url)
+		) }}
+{{end}}
+
+{{/* Kobe */}}
+{{ if eq $absInput "24" }}
+		{{ addReactions  "🏀" "🐍" }}
+		{{ $url := "https://media1.tenor.com/images/48ee91087f61fac64ca41b98f3bfa8ef/tenor.gif?itemid=8764570" }}
+		{{ sendMessage nil (cembed
+				"title" "KOBE!!!"
+				"color" (0x8c15b9)
+				"image" (sdict "url" $url)
+		) }}
+{{end}}
+
+{{/* MJ */}}
+{{ if eq $absInput "23" }}
+		{{ addReactions  "🏀" "🐐" }}
+		{{ $url := "https://media1.tenor.com/images/b054ef6ded01867028e5615cf9a9858d/tenor.gif?itemid=17298668" }}
+		{{ sendMessage nil (cembed
+				"title" "G. O. A. T."
+				"description" "*I believe I can fly...*"
+				"color" (0xC12F2F)
+				"image" (sdict "url" $url)
+		) }}
+{{end}}
+
+{{/* almost hehe */}}
+{{ if eq $absInput "68" }}
+		{{ addReactions  ":arthurFist:749784379529756684" "a:a_sumabog:760366591048417290" }}
+{{end}}
+
 {{/* hehe */}}
 {{ if eq $absInput "69" }}
 		{{ addReactions  ":heheBoye:754459019300700281" ":ab_nice:754459018948247554" }}
@@ -54,6 +92,18 @@
 				"title" "Am I Real?"
 				"color" (0xC12F2F)
 				"description" "*The world would die and everything may lie...*"
+				"image" (sdict "url" $url)
+		) }}
+{{ end }}
+
+{{/* my favorite song */}}
+{{ if eq $absInput "241" }}
+		{{ $url := "https://cdn.discordapp.com/attachments/765047137473265714/771709043244007424/roxnebres-deviantart-com-e1561078810674.png" }}
+		{{ addReactions "2️⃣" "4️⃣" "1️⃣" }}
+		{{ sendMessage nil (cembed
+				"title" "I wanted to turn you on"
+				"color" (0xC12F2F)
+				"description" "*My favorite song...*"
 				"image" (sdict "url" $url)
 		) }}
 {{ end }}
