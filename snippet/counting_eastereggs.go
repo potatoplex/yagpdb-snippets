@@ -15,7 +15,7 @@
 
 {{/* 21 Guns */}}
 {{ if eq $absInput "21" }}
-		{{ $url := "https://cdn.discordapp.com/attachments/765047137473265714/773234394122027058/21guns.gif" }}
+		{{ $url := "https://cdn.discordapp.com/attachments/765047137473265714/773530213606096896/21guns.gif" }}
 		{{ sendMessage nil (cembed
 				"title" "One... Twety One Guns..."
 				"color" (0x228B22)
@@ -42,6 +42,15 @@
 				"title" "G. O. A. T."
 				"description" "*I believe I can fly...*"
 				"color" (0xC12F2F)
+				"image" (sdict "url" $url)
+		) }}
+{{end}}
+{{/* MJ */}}
+{{ if eq $absInput "25" }}
+		{{ $url := "https://media1.tenor.com/images/3e1dc9d9a1a0d4957360ac9fe0bbd711/tenor.gif?itemid=13595902" }}
+		{{ sendMessage nil (cembed
+				"title" "What's funnier than 24?"
+				"color" (0xDCE54A)
 				"image" (sdict "url" $url)
 		) }}
 {{end}}
@@ -92,6 +101,18 @@
 				"title" "Am I Real?"
 				"color" (0xC12F2F)
 				"description" "*The world would die and everything may lie...*"
+				"image" (sdict "url" $url)
+		) }}
+{{ end }}
+
+
+{{/* brrt brrt */}}
+{{ if eq $absInput "230" }}
+		{{ $url := "https://cdn.discordapp.com/attachments/765047137473265714/774206908801351700/brrt.gif" }}
+		{{ addReactions "obosen:750959752527347773" }}
+		{{ sendMessage nil (cembed
+				"title" "Brrrt... Brrrt..."
+				"color" (0xC12F2F)
 				"image" (sdict "url" $url)
 		) }}
 {{ end }}
