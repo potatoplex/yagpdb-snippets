@@ -74,7 +74,7 @@
 {{/* i love you */}}
 {{ if eq $absInput "143" }}
 		{{ addReactions  ":pepeKilig:764897548288655420" "❤️" }}
-		{{ $url := "https://media1.tenor.com/images/4fd7ac67d3e28edcb6fb9aa89df06a66/tenor.gif?itemid=12032436" }}
+		{{ $url := "https://media1.tenor.com/images/4fd7ac67d3e28edcb6fb9aa89df06a66/tenor.gif" }}
 		{{ sendMessage nil (cembed
 				"title" "AYIIEEE"
 				"color" (0xC12F2F)
@@ -84,7 +84,7 @@
 
 {{/* yawa */}}
 {{ if or (eq $absInput "66") (eq $absInput "666") }}
-		{{ $url := "https://media1.tenor.com/images/b07609be95cee58687557221c87fff52/tenor.gif?itemid=4788073" }}
+		{{ $url := "https://media1.tenor.com/images/b07609be95cee58687557221c87fff52/tenor.gif" }}
 		{{ sendMessage nil (cembed
 				"title" "OMG"
 				"color" (0xC12F2F)

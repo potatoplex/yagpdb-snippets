@@ -24,6 +24,9 @@
 {{ $failed := false }}
 {{ $newRound := false }}
 {{ $absTofuNum := (reReplace "-" ($tofuNum | toString) "") }}
+{{ $epalChance := 5 }}
+{{ $epalStreak := 10 }}
+{{ $epalMode := false }}
 
 
 
@@ -129,10 +132,23 @@
             {{ dbSet 0 "count_lowestInput" $input }}
         {{ end }}
 
-        {{/* Check for magic numbers */}}
-        {{ execCC $easterEggCC nil 0 (sdict "Input" (toString $input)) }}
+
+        {{$epalRoll := randInt 100}}
+        
+        {{/* epal mode */}}
+        {{ if (and (lt $epalRoll $epalChance) (gt $streak $epalStreak)) }}
+            {{ $expected := dbIncr 0 "count_expected" $tofuNum | toInt }}
+            {{ dbSet 0 "count_prevInput" $expected }}
+            {{ $epalMode = true }}
+            {{ $expected }}
+        {{ else }}
+            {{/* Check for magic numbers */}}
+            {{ execCC $easterEggCC nil 0 (sdict "Input" (toString $input)) }}
+        {{ end }}
         
     {{ end }}
 {{ end }}
 
-{{ dbSet 0 "count_prevInput" $input }}
+{{ if not $epalMode }}
+    {{ dbSet 0 "count_prevInput" $input }}
+{{ end }}
